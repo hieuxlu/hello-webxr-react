@@ -1,20 +1,21 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useTexture } from '@react-three/drei'
 import assets, { Asset } from '../assets'
+import { ASSETS_PATH } from '../core/constants'
 import { useBasisTexture } from '../hooks/useBasisLoader'
 
 export const getAssetUrl = (name: Asset) => {
-  return `/assets/${assets[name].url}`
+  return `${ASSETS_PATH}${assets[name].url}`
 }
 
 export const getAsset = (name: Asset) => {
   return assets[name]
 }
 const loaders: any = {
-  gif: (url: string, onLoad?: any) => useTexture('/assets/' + url, onLoad),
-  png: (url: string, onLoad?: any) => useTexture('/assets/' + url, onLoad),
-  jpg: (url: string, onLoad?: any) => useTexture('/assets/' + url, onLoad),
-  basis: (url: string, onLoad?: any) => useBasisTexture({ url: '/assets/' + url }, onLoad)
+  gif: (url: string, onLoad?: any) => useTexture(ASSETS_PATH + url, onLoad),
+  png: (url: string, onLoad?: any) => useTexture(ASSETS_PATH + url, onLoad),
+  jpg: (url: string, onLoad?: any) => useTexture(ASSETS_PATH + url, onLoad),
+  basis: (url: string, onLoad?: any) => useBasisTexture({ url: ASSETS_PATH + url }, onLoad)
 }
 
 export const useTextureAsset = (name: Asset) => {
