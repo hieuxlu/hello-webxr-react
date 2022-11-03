@@ -77,7 +77,9 @@ export function HallModel(props: any) {
       <mesh geometry={nodes.hall.geometry} position={[-3.42, 0.49, 0.06]}>
         <meshBasicMaterial map={lightMapTexture} />
       </mesh>
-      <mesh geometry={nodes.teleport.geometry} position={[-3.42, 0.49, 0.06]} scale={[0.1, 0.5, 0.1]} />
+      <mesh geometry={nodes.teleport.geometry} position={[-3.42, 0.49, 0.06]} scale={[0.1, 0.5, 0.1]}>
+        <meshBasicMaterial visible={false} />
+      </mesh>
       <mesh geometry={nodes.sky.geometry} scale={[1, 0.67, 1]}>
         <meshBasicMaterial map={skyTexture} />
       </mesh>
