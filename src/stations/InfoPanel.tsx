@@ -1,6 +1,7 @@
 import { Text } from '@react-three/drei'
 import { MeshProps } from '@react-three/fiber'
 import { BufferGeometry } from 'three'
+import { BillBoard } from '../systems/BillBoard'
 import { IInfoData } from './InfoPanelsData'
 
 interface IInfoPanelProps extends MeshProps {
@@ -23,7 +24,7 @@ export const InfoPanel = ({ geometry, infoData: { title, description, offsety = 
   const { width, height } = getBoundBox(geometry)
 
   return (
-    <mesh geometry={geometry} {...props}>
+    <BillBoard geometry={geometry} {...props}>
       <meshBasicMaterial color={'#040404'} transparent />
       <Text
         color="#ffffff"
@@ -37,7 +38,8 @@ export const InfoPanel = ({ geometry, infoData: { title, description, offsety = 
         position={[(-width / 2) * 0.82, (height / 2) * 0.65 + offsety, 0.01]}
       >
         {title + '\n \n' + description}
+        <meshBasicMaterial />
       </Text>
-    </mesh>
+    </BillBoard>
   )
 }
