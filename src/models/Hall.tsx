@@ -15,6 +15,11 @@ export function HallModel(props: any) {
   const cloudTexture = useTextureAsset('clouds_tex')
   const mozillamr_tex = useTextureAsset('mozillamr_tex')
   const newsticker_tex = useTextureAsset('newsticker_tex')
+  const painting_bosch_tex = useTextureAsset('painting_bosch_tex')
+  const painting_degas_tex = useTextureAsset('painting_degas_tex')
+  const painting_rembrandt_tex = useTextureAsset('painting_rembrandt_tex')
+  const painting_seurat_tex = useTextureAsset('painting_seurat_tex')
+  const painting_sorolla_tex = useTextureAsset('painting_sorolla_tex')
 
   return (
     <group {...props} dispose={null}>
@@ -24,31 +29,41 @@ export function HallModel(props: any) {
           material={materials.default}
           position={[0.14, -0.19, -0.32]}
           rotation={[Math.PI / 2, 0, Math.PI / 2]}
-        />
+        >
+          <meshBasicMaterial map={painting_bosch_tex} />
+        </mesh>
         <mesh
           geometry={nodes.degas.geometry}
           material={materials.default}
           position={[0.14, -0.91, 4.32]}
           rotation={[Math.PI / 2, 0, Math.PI / 2]}
-        />
+        >
+          <meshBasicMaterial map={painting_degas_tex} />
+        </mesh>
         <mesh
           geometry={nodes.rembrandt.geometry}
           material={materials.default}
           position={[0.14, -0.42, 2.75]}
           rotation={[Math.PI / 2, 0, Math.PI / 2]}
-        />
+        >
+          <meshBasicMaterial map={painting_rembrandt_tex} />
+        </mesh>
         <mesh
           geometry={nodes.seurat.geometry}
           material={materials.default}
           position={[0.13, 0.01, 4.32]}
           rotation={[Math.PI / 2, 0, Math.PI / 2]}
-        />
+        >
+          <meshBasicMaterial map={painting_seurat_tex} />
+        </mesh>
         <mesh
           geometry={nodes.sorolla.geometry}
           material={materials.default}
           position={[0.14, -0.22, -3.79]}
           rotation={[Math.PI / 2, 0, Math.PI / 2]}
-        />
+        >
+          <meshBasicMaterial map={painting_sorolla_tex} />
+        </mesh>
       </group>
       <group position={[1.7, 0.9, -2.59]}>
         <mesh geometry={nodes.xnote000.geometry} material={materials.default} position={[0, 0.03, 0.48]} />
