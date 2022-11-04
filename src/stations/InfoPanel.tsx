@@ -33,9 +33,9 @@ export const InfoPanel = ({ geometry, infoData: { title, description, offsety = 
         textAlign="left"
         anchorX="left"
         anchorY="top"
-        maxWidth={0.8 * width}
+        maxWidth={0.85 * width}
         lineHeight={1.3}
-        position={[(-width / 2) * 0.82, (height / 2) * 0.65 + offsety, 0.01]}
+        position={[(-width / 2) * 0.85, (height / 2) * 0.65 + offsety, 0.01]}
       >
         {title + '\n \n' + description}
         <meshBasicMaterial />
